@@ -1,250 +1,277 @@
 /* ================================
-   Reset e base
+   RESET E BASE
 ================================ */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8fafc;
-    color: #1f2937;
-    line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8fafc;
+  color: #1f2937;
+  line-height: 1.6;
 }
 
 /* ================================
-   Wrapper mapa de carreira
+   BARRA DE PROGRESSO
+================================ */
+#progress-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #f3f3f3;
+  z-index: 9999;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #d63384; /* rosa */
+  transition: width 0.25s;
+}
+
+/* ================================
+   WRAPPER
 ================================ */
 .resume-wrapper {
-    padding: 50px 0;
+  padding: 50px 0;
 }
 
 .resume-wrapper-inner {
-    background-color: #ffffff;
-    max-width: 1000px;
-    margin: auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border-radius: 10px;
-    overflow: hidden;
+  background-color: #ffffff;
+  max-width: 1000px;
+  margin: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 /* ================================
-   Header
+   HEADER
 ================================ */
 .resume-header {
-    display: flex;
-    align-items: flex-start;
-    background-color: #2b2b3c;
-    color: #ffffff;
-    padding: 25px;
+  display: flex;
+  align-items: flex-start;
+  background-color: #2b2b3c;
+  color: #ffffff;
+  padding: 25px;
 }
 
 .resume-picture-holder {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 .resume-picture-holder .picture {
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 25px;
-    border: 3px solid #fff;
-}
-
-.resume-header .name,
-.resume-header .title {
-    text-align: left;
-    display: block;
-    margin: 5px 0;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 25px;
+  border: 3px solid #fff;
 }
 
 .resume-header .name {
-    font-size: 2rem;
-    font-weight: 600;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .resume-header .title {
-    font-size: 1.2rem;
-    color: #c7c7d3;
+  font-size: 1.2rem;
+  color: #c7c7d3;
+  margin-bottom: 10px;
 }
 
 .resume-header a.text-link {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-size: 0.95rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.95rem;
 }
 
 .resume-header a.text-link:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 /* ================================
-   Social links
+   SOCIAL LINKS
 ================================ */
 .resume-social {
-    padding-left: 0;
-    list-style: none;
+  padding-left: 0;
+  list-style: none;
 }
 
 .resume-social li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .resume-social .fa-container {
-    width: 25px;
+  width: 25px;
+  display: inline-block;
 }
 
 /* ================================
-   Seções
+   SEÇÕES
 ================================ */
 .resume-section {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .resume-section-title {
-    font-size: 1.5rem;
-    border-bottom: 2px solid #e5e7eb;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-    color: #2b3674;
-    font-weight: 600;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  color: #2b3674;
+  font-weight: 600;
 }
 
 .resume-section-content p {
-    margin-bottom: 15px;
-    color: #4b5563;
+  margin-bottom: 15px;
+  color: #4b5563;
 }
 
 /* ================================
-   Botão padrão
+   BOTÃO PADRÃO
 ================================ */
 .btn {
-    display: inline-block;
-    background-color: #4f46e5;
-    color: #fff;
-    padding: 10px 22px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s ease;
+  display: inline-block;
+  background-color: #4f46e5;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #4338ca;
+  background-color: #4338ca;
 }
 
 /* ================================
-   Timeline
+   TIMELINE
 ================================ */
 .resume-timeline {
-    position: relative;
-    padding-left: 20px;
-    border-left: 2px solid #e5e7eb;
+  position: relative;
+  padding-left: 20px;
+  border-left: 2px solid #e5e7eb;
 }
 
 .resume-timeline-item {
-    position: relative;
-    margin-bottom: 40px;
-    padding-left: 20px;
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.resume-timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .resume-timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -9px;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    background-color: #4f46e5;
-    border-radius: 50%;
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background-color: #4f46e5;
+  border-radius: 50%;
 }
 
 .resume-timeline-item-header h3 {
-    font-size: 1.2rem;
-    color: #2b3674;
+  font-size: 1.2rem;
+  color: #2b3674;
 }
 
 .resume-timeline-item-desc h4 {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #1f2937;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.resume-timeline-item-desc ul {
+  margin-left: 20px;
+  list-style-type: disc;
 }
 
 /* ================================
-   Badges
+   BADGES
 ================================ */
 .badge {
-    display: inline-block;
-    padding: 6px 12px;
-    background-color: #6b7280;
-    color: #fff;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    margin: 2px 4px 2px 0;
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #6b7280;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin: 2px 4px 2px 0;
 }
 
 .badge-light {
-    background-color: #e5e7eb;
-    color: #4f46e5;
+  background-color: #e5e7eb;
+  color: #4f46e5;
 }
 
 /* ================================
-   Skills
+   SKILLS
 ================================ */
-.resume-skill-item {
-    margin-bottom: 25px;
-}
-
 .resume-skills-cat {
-    margin-bottom: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #2b3674;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2b3674;
 }
 
-.progress {
-    height: 12px;
-    background-color: #e5e7eb;
-    border-radius: 8px;
-    overflow: hidden;
+.list-inline {
+  padding-left: 0;
+  list-style: none;
 }
 
-.progress-bar {
-    height: 100%;
-    background-color: #4f46e5;
-    transition: width 0.5s ease-in-out;
+.list-inline-item {
+  display: inline-block;
 }
 
 /* ================================
-   Idiomas
+   IDIOMAS
 ================================ */
 .resume-lang-list {
-    list-style: none;
-    padding-left: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 .resume-lang-list li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .resume-lang-name {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /* ================================
-   Responsividade
+   RESPONSIVIDADE
 ================================ */
 @media(max-width: 768px) {
-    .resume-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  .resume-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .resume-picture-holder .picture {
-        margin: 0 0 15px 0;
-    }
+  .resume-picture-holder .picture {
+    margin: 0 0 15px 0;
+  }
+}
+body {
+  background: linear-gradient(180deg, #7335cb 0%, #5e5eea 100%);
+}
+.resume-wrapper-inner {
+  background: linear-gradient(145deg, #ffffff 0%, #f3f3f8 100%);
 }
