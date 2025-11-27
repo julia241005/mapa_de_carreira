@@ -1,6 +1,6 @@
-/* ================================
+/* =========================
    RESET E BASE
-================================ */
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +9,17 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f8fafc;
   color: #1f2937;
   line-height: 1.6;
+  background: linear-gradient(135deg, #f9e0f7 0%, #e0d4ff 100%);
+  overflow-x: hidden;
+  position: relative;
+  z-index: 0;
 }
 
-/* ================================
+/* =========================
    BARRA DE PROGRESSO
-================================ */
+========================= */
 #progress-bar-container {
   position: fixed;
   top: 0;
@@ -30,46 +33,45 @@ body {
 #progress-bar {
   height: 100%;
   width: 0%;
-  background: #d63384; /* rosa */
+  background: #d63384;
   transition: width 0.25s;
 }
 
-/* ================================
+/* =========================
    WRAPPER
-================================ */
+========================= */
 .resume-wrapper {
   padding: 50px 0;
 }
 
 .resume-wrapper-inner {
-  background-color: #ffffff;
   max-width: 1000px;
   margin: auto;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   border-radius: 10px;
   overflow: hidden;
+  background: linear-gradient(145deg, #ffffff 0%, #f3f3f8 100%);
+  position: relative;
+  z-index: 1;
 }
 
-/* ================================
+/* =========================
    HEADER
-================================ */
+========================= */
 .resume-header {
   display: flex;
   align-items: flex-start;
   background-color: #2b2b3c;
   color: #ffffff;
   padding: 25px;
-}
-
-.resume-picture-holder {
-  flex-shrink: 0;
+  border-radius: 10px 10px 0 0;
 }
 
 .resume-picture-holder .picture {
   width: 160px;
   height: 160px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 50%; /* redonda */
   margin-right: 25px;
   border: 3px solid #fff;
 }
@@ -87,18 +89,19 @@ body {
 }
 
 .resume-header a.text-link {
-  color: #cbd5e1;
+  color: #f3f3f3;
   text-decoration: none;
   font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
 .resume-header a.text-link:hover {
-  color: #ffffff;
+  color: #d63384; /* destaque suave ao passar o mouse */
 }
 
-/* ================================
+/* =========================
    SOCIAL LINKS
-================================ */
+========================= */
 .resume-social {
   padding-left: 0;
   list-style: none;
@@ -113,48 +116,27 @@ body {
   display: inline-block;
 }
 
-/* ================================
-   SEÇÕES
-================================ */
-.resume-section {
-  margin-bottom: 40px;
-}
-
-.resume-section-title {
-  font-size: 1.5rem;
-  border-bottom: 2px solid #e5e7eb;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-  color: #2b3674;
-  font-weight: 600;
-}
-
-.resume-section-content p {
-  margin-bottom: 15px;
-  color: #4b5563;
-}
-
-/* ================================
-   BOTÃO PADRÃO
-================================ */
+/* =========================
+   BOTÃO BAIXAR CV
+========================= */
 .btn {
   display: inline-block;
-  background-color: #4f46e5;
+  background-color: #d63384; /* cor fixa */
   color: #fff;
   padding: 10px 22px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s ease;
+  transition: none; /* sem efeito hover */
 }
 
 .btn:hover {
-  background-color: #4338ca;
+  background-color: #d63384; /* mantém a cor igual */
 }
 
-/* ================================
+/* =========================
    TIMELINE
-================================ */
+========================= */
 .resume-timeline {
   position: relative;
   padding-left: 20px;
@@ -185,34 +167,28 @@ body {
   background-color: #4f46e5;
   border-radius: 50%;
 }
-
-.resume-timeline-item-header h3 {
-  font-size: 1.2rem;
-  color: #2b3674;
-}
-
-.resume-timeline-item-desc h4 {
-  margin-top: 10px;
-  font-size: 1rem;
-  color: #1f2937;
-}
-
 .resume-timeline-item-desc ul {
   margin-left: 20px;
   list-style-type: disc;
 }
 
-/* ================================
-   BADGES
-================================ */
-.badge {
+/* =========================
+   BADGES NEON
+========================= */
+.badge, .badge-light {
   display: inline-block;
   padding: 6px 12px;
-  background-color: #6b7280;
-  color: #fff;
   border-radius: 12px;
   font-size: 0.8rem;
   margin: 2px 4px 2px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.badge {
+  background-color: #6b7280;
+  color: #fff;
 }
 
 .badge-light {
@@ -220,9 +196,16 @@ body {
   color: #4f46e5;
 }
 
-/* ================================
-   SKILLS
-================================ */
+.badge:hover, .badge-light:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 12px #8b5cf6;
+  border-color: #a78bfa;
+  text-shadow: 0 0 6px rgba(167, 139, 250, 0.5);
+}
+
+/* =========================
+   SKILLS E IDIOMAS
+========================= */
 .resume-skills-cat {
   margin-bottom: 10px;
   font-size: 1rem;
@@ -239,9 +222,6 @@ body {
   display: inline-block;
 }
 
-/* ================================
-   IDIOMAS
-================================ */
 .resume-lang-list {
   list-style: none;
   padding-left: 0;
@@ -255,9 +235,9 @@ body {
   font-weight: bold;
 }
 
-/* ================================
+/* =========================
    RESPONSIVIDADE
-================================ */
+========================= */
 @media(max-width: 768px) {
   .resume-header {
     flex-direction: column;
@@ -269,9 +249,10 @@ body {
     margin: 0 0 15px 0;
   }
 }
-body {
-  background: linear-gradient(180deg, #7335cb 0%, #5e5eea 100%);
-}
-.resume-wrapper-inner {
-  background: linear-gradient(145deg, #ffffff 0%, #f3f3f8 100%);
+
+/* =========================
+   REMOVENDO PARTICULAS E FUNDO TECNOLÓGICO
+========================= */
+#tech-bg, .particle, .dot, .line {
+  display: none;
 }
